@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="dashboard landing">
+    <div class="parent">
+
+        <!-- Top Nav -->
+        <% include ../partials/header_logged_in %>
+
+            <!-- Full Width Banner -->
+            <div class="main-media">
+                <h1>DASHBOARD</h1>
+            </div>
+
+            <!-- Container -->
+            <div class="content container">
+                <div class="info-container clearfix">
+                    <h2 class="text-center">Welcome John Smith, here are the latest updates.</h2>
+                    <div class="filters dashboard-filters clearfix">
+                        <div class="filter active" data-val="all">All</div>
+                        <div class="filter" data-val="following">Following</div>
+                        <div class="filter" data-val="revivals">Revivals</div>
+                        <div class="filter" data-val="launches">Launches</div>
+                        <div class="filter" data-val="messages">Messages</div>
+                    </div>
+                    <div class="dashboard-content">
+                        <!-- <div class="empty-content text-center">
+                            <h3>You are currently not following any campaigns.<br>Please start a campaign or follow one to receive updates to your dashboard.</h3>
+                        </div> -->
+                        <div class="slider clearfix">
+                            <div class="slide launch">
+                                <a href="launch.php">
+                                    <img src="/images/walking-dead.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Walking Dead</h3>
+                                    <p class="secondary">By Chris Kents</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide revive">
+                                <a href="revive.php">
+                                    <img src="/images/modern-family.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>$421<span>of $2k</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Family Guy</h3>
+                                    <p class="secondary">By Jasmine Redarr</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide launch">
+                                <a href="launch.php">
+                                    <img src="/images/walking-dead.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Walking Dead</h3>
+                                    <p class="secondary">By Chris Kents</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide revive">
+                                <a href="revive.php">
+                                    <img src="/images/modern-family.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>$421<span>of $2k</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Family Guy</h3>
+                                    <p class="secondary">By Jasmine Redarr</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide launch">
+                                <a href="launch.php">
+                                    <img src="/images/walking-dead.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Walking Dead</h3>
+                                    <p class="secondary">By Chris Kents</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide revive">
+                                <a href="revive.php">
+                                    <img src="/images/modern-family.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>$421<span>of $2k</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Family Guy</h3>
+                                    <p class="secondary">By Jasmine Redarr</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide launch">
+                                <a href="launch.php">
+                                    <img src="/images/walking-dead.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Walking Dead</h3>
+                                    <p class="secondary">By Chris Kents</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                            <div class="slide revive">
+                                <a href="revive.php">
+                                    <img src="/images/modern-family.jpg">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>$421<span>of $2k</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis">Family Guy</h3>
+                                    <p class="secondary">By Jasmine Redarr</p>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <a class="link active">1</a>
+                        <a class="link">2</a>
+                        <a class="link">3</a>
+                        <a class="next">Last</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <% include ../partials/footer %>
+    </div>
+</body>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    // tabs
+    $('.slider .options .option').bind('click', function(){
+      var val = $(this).attr('data-attr');
+      $('.slider .slides').removeClass('active');
+
+      $('.slider .slides.' + val).addClass('active');
+    });
+
+    // logged in user
+    $('.topnav .user').bind('click', function(){
+      $(this).toggleClass('active');
+      $('.topnav .user .dropdown').slideToggle(350);
+    });
+  });
+</script>
+
+
+</html>
