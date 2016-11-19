@@ -16,20 +16,28 @@
                 <div class="steps-container">
                     <div class="step step-one active">
                         <h2>LOG IN</h2>
+
+                        <% if (messages) { %>
+                            <p><%= messages %></p>
+                        <% } %>
+
                         <a href="/pages/dashboard" class="fb-link btn"><img src="/images/fb_white.png">USE MY FACEBOOK ACCOUNT</a>
                         <a href="/pages/dashboard" class="gl-link btn"><img src="/images/gl_white.png">USE MY GOOGLE + ACCOUNT</a>
                         <p class="or">or</p>
-                        <div class="contain">
-                            <span>EMAIL</span>
-                            <input type="text">
-                        </div>
-                        <div class="contain">
-                            <span>PASSWORD</span>
-                            <input type="password">
-                        </div>
-                        <div class="contain">
-                            <a href="/users/dashboard"class="btn">LOG IN</a>
-                        </div>
+                        <form action="/users/login" method="post">
+                          <div class="contain">
+                              <span>EMAIL ADDRESS</span>
+                              <input type="text" id="email" name="email">
+                          </div>
+                          <div class="contain">
+                              <span>PASSWORD</span>
+                              <input type="password" id="password" name="password">
+                          </div>
+                          <div class="contain">
+                              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                              <button type="submit" class="btn">LOG IN</button>
+                          </div>
+                        </form>
                         <a class="forgot-pass">Forgot Password?</a>
                     </div>
                 </div>

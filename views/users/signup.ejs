@@ -17,31 +17,39 @@
                     <div class="steps-container">
                         <div class="step step-one active">
                             <h2>SIGN UP</h2>
-                            <a href="/pages/dashboard" class="fb-link btn"><img src="/images/fb_white.png">USE MY FACEBOOK ACCOUNT</a>
-                            <a href="/pages/dashboard" class="gl-link btn"><img src="/images/gl_white.png">USE MY GOOGLE + ACCOUNT</a>
-                            <p class="or">or</p>
-                            <a class="email-form btn">USE MY EMAIL ADDRESS</a>
-                            <div class="hide" style="display:none;">
-                                <div class="contain">
-                                    <span>FIRST NAME</span>
-                                    <input type="text">
-                                </div>
-                                <div class="contain">
-                                    <span>LAST NAME</span>
-                                    <input type="text">
-                                </div>
-                                <div class="contain">
-                                    <span>EMAIL ADDRESS</span>
-                                    <input type="text">
-                                </div>
-                                <div class="contain">
-                                    <span>PASSWORD</span>
-                                    <input type="password">
-                                </div>
-                                <div class="contain">
-                                    <a href="/users/dashboard" class="btn">SIGN UP</a>
-                                </div>
-                            </div>
+
+                            <% if (messages) { %>
+                                <p><%= messages %></p>
+                            <% } %>
+
+                              <a href="/users/dashboard" class="fb-link btn"><img src="/images/fb_white.png">USE MY FACEBOOK ACCOUNT</a>
+                              <a href="/users/dashboard" class="gl-link btn"><img src="/images/gl_white.png">USE MY GOOGLE + ACCOUNT</a>
+                              <p class="or">or</p>
+                              <a class="email-form btn">USE MY EMAIL ADDRESS</a>
+                              <div class="hide" style="display:none;">
+                                  <form action="/users/signup" method="post">
+                                      <div class="contain">
+                                          <span>FIRST NAME</span>
+                                          <input type="text" id="firstName" name="firstName">
+                                      </div>
+                                      <div class="contain">
+                                          <span>LAST NAME</span>
+                                          <input type="text" id="lastName" name="lastName">
+                                      </div>
+                                      <div class="contain">
+                                          <span>EMAIL ADDRESS</span>
+                                          <input type="text" id="email" name="email">
+                                      </div>
+                                      <div class="contain">
+                                          <span>PASSWORD</span>
+                                          <input type="password" id="password" name="password">
+                                      </div>
+                                      <div class="contain">
+                                          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                          <button type="submit" class="btn">SIGN UP</button>
+                                      </div>
+                                  </form>
+                              </div>
                         </div>
                     </div>
                 </div>
