@@ -9,7 +9,7 @@
     <div class="parent">
 
         <!-- Top Nav -->
-        <% include ../partials/header_logged_in %>
+        <% include ../partials/header %>
 
             <!-- Full Width Banner -->
             <div class="main-media">
@@ -19,7 +19,7 @@
             <!-- Container -->
             <div class="content container">
                 <div class="info-container clearfix">
-                    <h2 class="text-center">Welcome John Smith, here are the latest updates.</h2>
+                    <h2 class="text-center">Welcome <%= currentUser.firstName %>, here are the latest updates.</h2>
                     <div class="filters dashboard-filters clearfix">
                         <div class="filter active" data-val="all">All</div>
                         <div class="filter" data-val="following">Following</div>

@@ -87,9 +87,12 @@
                         <a class="option">Ending Soon</a>
                     </div>
                     <div class="clearfix">
+
+                        <% revivals.forEach(function(revive) { %>
+
                         <a href="pages/revive" class="slide revive">
                             <div class="media">
-                                <img src="images/suits.jpg">
+                                <img src="<%= revive.img %>">
                                 <div class="funding">
                                     <h2>$12,151 of 25K Goal</h2>
                                     <div class="funds">
@@ -102,153 +105,12 @@
                             <span class="favorite"></span>
                             <div class="copy">
                                 <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Suits</h3>
+                                <h3 class="ellipsis"><h4><%= revive.name %></h4></h3>
                             </div>
                         </a>
-                        <a href="pages/launch" class="slide launch">
-                            <div class="media">
-                                <img src="images/modern-family.jpg">
-                                <div class="funding">
-                                    <h2>151 SIGNATURES</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:80%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Modern Family</h3>
-                            </div>
-                        </a>
-                        <a href="pages/launch" class="slide launch">
-                            <div class="media">
-                                <img src="images/family-guy.jpg">
-                                <div class="funding">
-                                    <h2>$421</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:5%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Family Guy</h3>
-                            </div>
-                        </a>
-                        <a href="#" class="slide">
-                            <div class="media">
-                                <img src="images/americas-got-talent.jpg">
-                                <div class="funding">
-                                    <h2>88 SIGNATURES</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:65%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">America's Got Talent</h3>
-                            </div>
-                        </a>
-                        <a href="pages/launch" class="slide launch">
-                            <div class="media">
-                                <img src="images/courage.jpg">
-                                <div class="funding">
-                                    <h2>$6,301</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:45%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Courage the cowardly dog</h3>
-                            </div>
-                        </a>
-                        <a href="pages/revive" class="slide revive">
-                            <div class="media">
-                                <img src="images/walking-dead.jpg">
-                                <div class="funding">
-                                    <h2>$2,500</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:25%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Walking Dead</h3>
-                            </div>
-                        </a>
-                        <a href="pages/revive" class="slide revive">
-                            <div class="media">
-                                <img src="images/family-guy.jpg">
-                                <div class="funding">
-                                    <h2>$12,151</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:82%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Family Guy</h3>
-                            </div>
-                        </a>
-                        <a href="pages/launch" class="slide launch">
-                            <div class="media">
-                                <img src="images/simpsons.jpg">
-                                <div class="funding">
-                                    <h2>13,951 SIGNATURES</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:80%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">Simpsons</h3>
-                            </div>
-                        </a>
-                        <a href="pages/launch" class="slide launch">
-                            <div class="media">
-                                <img src="images/americas-got-talent.jpg">
-                                <div class="funding">
-                                    <h2>$421</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:5%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis">America's Got Talent</h3>
-                            </div>
-                        </a>
+
+                        <% }); %>
+
                     </div>
                     <div class="pagination">
                         <a class="link active">1</a>
@@ -263,5 +125,23 @@
         <% include ../partials/footer %>
     </div>
 </body>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    // tabs
+    $('.slider .options .option').bind('click', function(){
+      var val = $(this).attr('data-attr');
+      $('.slider .slides').removeClass('active');
+
+      $('.slider .slides.' + val).addClass('active');
+    });
+
+    // logged in user
+    $('.topnav .user').bind('click', function(){
+      $(this).toggleClass('active');
+      $('.topnav .user .dropdown').slideToggle(350);
+    });
+  });
+</script>
 
 </html>

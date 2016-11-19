@@ -10,6 +10,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -40,6 +41,12 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    // res.locals.session = req.session;
+    next();
+});
 
 app.use('/users', users);
 app.use('/', routes);

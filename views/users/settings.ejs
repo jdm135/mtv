@@ -9,7 +9,7 @@
     <div class="parent">
 
         <!-- Top Nav -->
-        <% include ../partials/header_logged_in %>
+        <% include ../partials/header %>
 
         <!-- Full Width Banner -->
         <div class="main-media">
@@ -120,7 +120,7 @@
             $('.main-content .desc').removeClass('active');
             $('.main-content .desc.' + type).addClass('active');
         });
-        
+
         $('.slider .options .option').bind('click', function(){
           var val = $(this).attr('data-attr');
           $('.slider .slides').removeClass('active');

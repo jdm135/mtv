@@ -3,6 +3,8 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 
+User = require('../models/user');
+
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
@@ -14,7 +16,7 @@ router.get('/logout', isLoggedIn, function (req, res, next) {
 });
 
 router.get('/dashboard', isLoggedIn, function(req, res, next) {
-  res.render('users/dashboard');
+  res.render('users/dashboard', {currentUser: req.user});
 });
 
 router.get('/settings', isLoggedIn, function(req, res, next) {
