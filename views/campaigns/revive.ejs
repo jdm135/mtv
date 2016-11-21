@@ -94,7 +94,7 @@
                             <div class="media">
                                 <img src="<%= revive.revivePhoto %>">
                                 <div class="funding">
-                                    <h2>$12,151 of 25K Goal</h2>
+                                    <h2>$12,151 of <%= revive.reviveGoal %> Goal</h2>
                                     <div class="funds">
                                         <div class="fund-bar">
                                             <div class="progress-bar" style="width:82%"></div>
@@ -106,29 +106,6 @@
                             <div class="copy">
                                 <p class="secondary">8.7/10 • Animation, Comedy</p>
                                 <h3 class="ellipsis"><h4><%= revive.reviveShowName %></h4></h3>
-                            </div>
-                        </a>
-
-                        <% }); %>
-
-                        <% launches.forEach(function(launch) { %>
-
-                        <a href="/campaigns/launch/<%= launch._id %>" class="slide launch">
-                            <div class="media">
-                                <img src="<%= launch.launchPhoto %>">
-                                <div class="funding">
-                                    <h2>$12,151 of 25K Goal</h2>
-                                    <div class="funds">
-                                        <div class="fund-bar">
-                                            <div class="progress-bar" style="width:82%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="favorite"></span>
-                            <div class="copy">
-                                <p class="secondary">8.7/10 • Animation, Comedy</p>
-                                <h3 class="ellipsis"><h4><%= launch.launchShowName %></h4></h3>
                             </div>
                         </a>
 

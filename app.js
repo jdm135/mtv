@@ -13,10 +13,12 @@ var validator = require('express-validator');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var campaigns = require('./routes/campaigns');
 
 var app = express();
 
 mongoose.connect('mongodb://heroku_xhvb85dm:uaf61dm0iab63262ol6r4o9964@ds157667.mlab.com:57667/heroku_xhvb85dm');
+// mongoose.connect('localhost:27017/mtv');
 require('./config/passport');
 
 // view engine setup
@@ -27,7 +29,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(validator());
 app.use(cookieParser());
 app.use(session({secret: 'mysupersecret', resave: false, saveUninitialized: false}));
@@ -49,6 +51,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/users', users);
+app.use('/campaigns', campaigns);
 app.use('/', routes);
 
 // catch 404 and forward to error handler

@@ -15,10 +15,10 @@
                 <div class="info-container clearfix">
                     <div class="left">
                         <div class="banner">
-                            <img src="http://a.abcnews.com/images/Entertainment/AP_the_simpsons_jef_131001_33x16_1600.jpg">
+                            <img src="<%= revive.revivePhoto %>">
                             <span class="favorite">Favorite</span>
                         </div>
-                        <h2 class="title">THE SIMPSONS</h2>
+                        <h2 class="title"><%= revive.reviveTitle %></h2>
                         <p class="subtitle">Last season in 2008</p>
                         <hr class="small">
                         <div class="social clearfix">
@@ -39,17 +39,10 @@
                         <div class="tab-content">
                             <div class="tcontent story active">
                                 <div class="copy">
-                                    <p>The Simpsons is an American animated sitcom created by Matt Groening for the Fox Broadcasting Company.The series is a satirical depiction of a working class lifestyle epitomized by the Simpson family, which consists
-                                        of Homer, Marge, Bart, Lisa, and Maggie. The show is set in the fictional town of Springfield and parodies American culture, society, television, and many aspects of the human condition. It's the 20th Century Fox
-                                        debut in animation.</p>
-                                    <img src="http://ib.huluim.com/show_key_art/58?size=1600x600&region=US">
-                                    <p>The family was conceived by Groening shortly before a solicitation for a series of animated shorts with the producer James L. Brooks. Groening created a dysfunctional family and named the characters after members of
-                                        his own family, substituting Bart for his own name. The shorts became a part of The Tracey Ullman Show on April 19, 1987. After a three-season run, the sketch was developed into a half-hour prime time show and was
-                                        an early hit for Fox, becoming the network's first series to land in the Top 30 ratings in a season (1989–90).</p>
-                                    <img src="http://static-media.fxx.com/img/FX_Networks_-_FXX/972/471/fox_TheSimpsons_VABF15_hulu.jpg">
-                                    <p>Since its debut on December 17, 1989, the series has broadcast 596 episodes. It will begin airing its 28th season on September 25, 2016. The Simpsons is the longest-running American sitcom, the longest-running American
-                                        animated program, and in 2009 it surpassed Gunsmoke as the longest-running American scripted primetime television series. The Simpsons Movie, a feature-length film, was released in theaters worldwide on July 27,
-                                        2007, and grossed over $527 million. On May 4, 2015, the series was officially renewed for seasons twenty-seven (2015–16) and twenty-eight (2016–17), consisting of 22 episodes each.</p>
+                                    <p><%= revive.reviveStory %></p>
+                                    <br>
+                                    <iframe width="660" height="371" src="<%= revive.reviveVideo %>"></iframe>
+                                    <p><%= revive.reviveStory %></p>
                                 </div>
                             </div>
                             <div class="tcontent updates">
@@ -92,7 +85,7 @@
                     </div>
                     <div class="right">
                         <div class="funding">
-                            <h2>13,951 SIGNATURES<span>of 25k goal</span></h2>
+                            <h2>13,951 SIGNATURES<span>of <%= revive.reviveGoal %> goal</span></h2>
                             <div class="funds">
                                 <div class="fund-bar">
                                     <div class="progress-bar" style="width:80%"></div>
