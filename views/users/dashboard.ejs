@@ -33,7 +33,55 @@
                         </div> -->
                         <div class="slider clearfix">
 
+                          <% revives.forEach(function(revive) { %>
 
+                            <div class="slide revive">
+                                <a href="/campaigns/revive/<%= revive._id %>">
+                                    <img src="<%= revive.revivePhoto %>">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis"><%= revive.reviveShowName %></h3>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+
+                          <% }); %>
+
+                          <% launches.forEach(function(launch) { %>
+
+                            <div class="slide launch">
+                                <a href="/campaigns/revive/<%= launch._id %>">
+                                    <img src="<%= launch.launchPhoto %>">
+                                </a>
+                                <span class="favorite"></span>
+                                <div class="copy">
+                                    <div class="funding">
+                                        <h2>15 SIGNATURES<span>of 120</span></h2>
+                                        <div class="funds">
+                                            <div class="fund-bar">
+                                                <div class="progress-bar" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="ellipsis"><%= launch.launchShowName %></h3>
+                                    <hr class="small">
+                                    <a href="#" class="link">Edit</a>
+                                    <a href="#" class="link">Delete</a>
+                                </div>
+                            </div>
+
+                          <% }); %>
 
 
                         </div>

@@ -3,9 +3,9 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 
-User = require('../models/user');
-Revive = require('../models/revive');
-Launch = require('../models/launch');
+var User = require('../models/user');
+var Revive = require('../models/revive');
+var Launch = require('../models/launch');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
@@ -17,20 +17,42 @@ router.get('/logout', isLoggedIn, function (req, res, next) {
     res.redirect('/');
 });
 
-router.get('/dashboard', isLoggedIn, function(req, res) {
-    res.render('users/dashboard', {currentUser: req.user});
+// router.get('/dashboard', isLoggedIn, function(req, res) {
+//     res.render('users/dashboard', {currentUser: req.user});
+// });
+
+router.get('/dashboard', isLoggedIn, function(req, res, next) {
+  Revive.find({'author.id' :req.user._id}, function (err, revives) {
+    if(err) {
+      console.log(err)
+    } else {
+      Launch.find({'author.id' :req.user._id}, function (err, launches) {
+        if(err) {
+          console.log(err)
+        } else {
+          res.render('users/dashboard', {currentUser: req.user, revives: revives, launches: launches});
+        }
+      });
+    }
+  });
 });
 
-// res.render('users/dashboard', {revives: revives, launches: launches, currentUser: req.user});
+//     Revive.find({'author.id' :req.user._id}, (err, revives) => {
+//        if(err) {
+//          console.log(err);
+//        } else {
+//          res.render('users/dashboard', {currentUser: req.user, revives: revives});
+//        }
+//     });
+// });
+
+
 
 
 router.get('/settings', isLoggedIn, function(req, res, next) {
   res.render('users/settings', {currentUser: req.user});
 });
 
-// router.use('/', notLoggedIn, function(req, res, next) {
-//    next();
-// });
 
 router.get('/signup', function(req, res, next) {
   var messages = req.flash('error');
@@ -64,10 +86,3 @@ function isLoggedIn(req, res, next) {
     }
     res.redirect('/');
 }
-
-// function notLoggedIn(req, res, next) {
-//     if (!req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect('/');
-// }

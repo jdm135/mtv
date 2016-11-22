@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-Revive = require('../models/revive');
-Launch = require('../models/launch');
-User = require('../models/user');
+var Revive = require('../models/revive');
+var Launch = require('../models/launch');
+var User = require('../models/user');
 
 
 // Revive.create(
@@ -42,7 +42,6 @@ router.post('/revive', isLoggedIn, function(req, res, next) {
     username: req.user.firstName
   };
   var newRevive = {reviveShowName: reviveShowName, reviveGoal: reviveGoal, reviveTitle: reviveTitle, revivePhoto: revivePhoto, reviveVideo: reviveVideo, reviveStory: reviveStory, author: author};
-  var newRevive = {reviveShowName: reviveShowName, reviveGoal: reviveGoal, reviveTitle: reviveTitle, revivePhoto: revivePhoto, reviveVideo: reviveVideo, reviveStory: reviveStory};
   Revive.create(newRevive, function(err, newlyCreatedRevive) {
     if(err) {
       console.log(err);
@@ -93,7 +92,6 @@ router.post('/launch', isLoggedIn, function(req, res, next) {
     username: req.user.firstName
   };
   var newLaunch = {launchShowName: launchShowName, launchGoal: launchGoal, launchTitle: launchTitle, launchPhoto: launchPhoto, launchVideo, launchStory: launchStory, author: author};
-  var newLaunch = {launchShowName: launchShowName, launchGoal: launchGoal, launchTitle: launchTitle, launchPhoto: launchPhoto, launchVideo, launchStory: launchStory};
   Launch.create(newLaunch, function(err, newlyCreatedLaunch) {
     if(err) {
       console.log(err);

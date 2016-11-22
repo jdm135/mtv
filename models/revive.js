@@ -27,7 +27,8 @@ var reviveSchema = new Schema({
       id: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "User"
-      }
+      },
+      username: String
     }
 });
 
