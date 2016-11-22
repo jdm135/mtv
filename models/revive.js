@@ -21,6 +21,7 @@ var reviveSchema = new Schema({
         type: String
     },
     reviveStory: {
+<<<<<<< HEAD
         type: String
     },
     author: {
@@ -28,6 +29,9 @@ var reviveSchema = new Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         }
+=======
+      type: String
+>>>>>>> 6c9ade23264c694403e9fdda8aa52794d0f76161
     }
 });
 
