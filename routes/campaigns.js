@@ -49,6 +49,11 @@ router.get('/revive/new', isLoggedIn, function(req, res, next) {
   res.render('campaigns/new_revive');
 });
 
+router.get('/files/add-signature', function(req, res, next) {
+  res.render('campaigns/files/add-signature');
+});
+
+
 router.get('/revive/:id', function(req, res, next) {
   Revive.findById(req.params.id, function(err, foundRevive) {
     if(err) {

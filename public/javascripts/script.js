@@ -69,4 +69,9 @@ $(function() {
     }
 
     homeBanner();
+
+    // popup
+    $('.popup').magnificPopup({
+      type: 'ajax'
+    });
 });

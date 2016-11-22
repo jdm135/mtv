@@ -82,6 +82,9 @@ a{
 .text-right{
 	text-align:right;
 }
+.hidden{
+	display:none !important;
+}
 
 /* Top Nav */
 .topnav{
@@ -979,6 +982,7 @@ body.landing .info-container .about p span{
 body.landing .info-container .social a{
 	display:inline-block;
 	width:23.5%;
+	width:49%;
 	float:left;
 	padding:6px 10px;
 	background:#3b579d;
@@ -1014,7 +1018,8 @@ body.landing .info-container .social a:hover{
 }
 body.landing a.btn,
 body.landing .comments input[type="submit"],
-a.btn{
+a.btn,
+button.btn{
 	background:rgba(18, 146, 212, 0.8);
 	font-family:'Montserrat', helvetica, arial;
 	text-align:center;
@@ -1026,6 +1031,7 @@ a.btn{
 	text-decoration:none;
 	position:relative;
 	padding:10px 20px;
+	border:none;
 	width:100%;
 	border-radius:2px;
 	font-family:'Montserrat', helvetica, arial;
@@ -1615,7 +1621,7 @@ body.landing .info-container a.fb-link{
 body.landing .info-container a.gl-link{
 	background:#bd081c;
 }
-body.landing .info-container a.gl-link{
+body.landing .info-container a.tw-link{
 	margin-top:10px;
 }
 body.landing .info-container a.forgot-pass{
@@ -1624,10 +1630,16 @@ body.landing .info-container a.forgot-pass{
 	font-size:13px;
 	display:inline-block;
 }
+body.landing .info-container a.register-cta{
+	display:block;
+	margin-top:10px;
+	font-size:13px;
+}
 body.landing .info-container a.btn.disabled{
 	opacity:0;
 }
-body.landing .info-container a.forgot-pass:hover{
+body.landing .info-container a.forgot-pass:hover,
+body.landing .info-container a.register-cta:hover{
 	text-decoration:underline;
 	cursor:pointer;
 }
