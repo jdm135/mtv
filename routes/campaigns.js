@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD
 Revive = require('../models/revive');
 Launch = require('../models/launch');
-=======
-var Revive = require('../models/revive');
-var Launch = require('../models/launch');
->>>>>>> 6c9ade23264c694403e9fdda8aa52794d0f76161
+User = require('../models/user');
+
 
 // Revive.create(
 //   {
@@ -40,15 +37,12 @@ router.post('/revive', isLoggedIn, function(req, res, next) {
   var revivePhoto = req.body.revivePhoto;
   var reviveVideo = req.body.reviveVideo;
   var reviveStory = req.body.reviveStory;
-<<<<<<< HEAD
   var author = {
     id: req.user._id,
     username: req.user.firstName
   };
   var newRevive = {reviveShowName: reviveShowName, reviveGoal: reviveGoal, reviveTitle: reviveTitle, revivePhoto: revivePhoto, reviveVideo: reviveVideo, reviveStory: reviveStory, author: author};
-=======
   var newRevive = {reviveShowName: reviveShowName, reviveGoal: reviveGoal, reviveTitle: reviveTitle, revivePhoto: revivePhoto, reviveVideo: reviveVideo, reviveStory: reviveStory};
->>>>>>> 6c9ade23264c694403e9fdda8aa52794d0f76161
   Revive.create(newRevive, function(err, newlyCreatedRevive) {
     if(err) {
       console.log(err);
@@ -94,15 +88,12 @@ router.post('/launch', isLoggedIn, function(req, res, next) {
   var launchPhoto = req.body.launchPhoto;
   var launchVideo = req.body.launchVideo;
   var launchStory = req.body.launchStory;
-<<<<<<< HEAD
   var author = {
     id: req.user._id,
     username: req.user.firstName
   };
   var newLaunch = {launchShowName: launchShowName, launchGoal: launchGoal, launchTitle: launchTitle, launchPhoto: launchPhoto, launchVideo, launchStory: launchStory, author: author};
-=======
   var newLaunch = {launchShowName: launchShowName, launchGoal: launchGoal, launchTitle: launchTitle, launchPhoto: launchPhoto, launchVideo, launchStory: launchStory};
->>>>>>> 6c9ade23264c694403e9fdda8aa52794d0f76161
   Launch.create(newLaunch, function(err, newlyCreatedLaunch) {
     if(err) {
       console.log(err);

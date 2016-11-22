@@ -24,10 +24,10 @@ var launchSchema = new Schema({
         type: String
     },
     author: {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "User"
-        }
+      id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+      }
     }
 });
 
