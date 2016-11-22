@@ -17,8 +17,8 @@ var campaigns = require('./routes/campaigns');
 
 var app = express();
 
-// mongoose.connect('mongodb://heroku_xhvb85dm:uaf61dm0iab63262ol6r4o9964@ds157667.mlab.com:57667/heroku_xhvb85dm');
-mongoose.connect('localhost:27017/mtv');
+mongoose.connect('mongodb://heroku_xhvb85dm:uaf61dm0iab63262ol6r4o9964@ds157667.mlab.com:57667/heroku_xhvb85dm');
+// mongoose.connect('localhost:27017/mtv');
 require('./config/passport');
 
 // view engine setup
