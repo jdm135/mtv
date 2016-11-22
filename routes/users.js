@@ -4,6 +4,8 @@ var csrf = require('csurf');
 var passport = require('passport');
 
 User = require('../models/user');
+Revive = require('../models/revive');
+Launch = require('../models/launch');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
@@ -15,17 +17,20 @@ router.get('/logout', isLoggedIn, function (req, res, next) {
     res.redirect('/');
 });
 
-router.get('/dashboard', isLoggedIn, function(req, res, next) {
-  res.render('users/dashboard', {currentUser: req.user});
+router.get('/dashboard', isLoggedIn, function(req, res) {
+    res.render('users/dashboard', {currentUser: req.user});
 });
+
+// res.render('users/dashboard', {revives: revives, launches: launches, currentUser: req.user});
+
 
 router.get('/settings', isLoggedIn, function(req, res, next) {
-  res.render('users/settings');
+  res.render('users/settings', {currentUser: req.user});
 });
 
-router.use('/', notLoggedIn, function(req, res, next) {
-   next();
-});
+// router.use('/', notLoggedIn, function(req, res, next) {
+//    next();
+// });
 
 router.get('/signup', function(req, res, next) {
   var messages = req.flash('error');
@@ -60,9 +65,9 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-function notLoggedIn(req, res, next) {
-    if (!req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/');
-}
+// function notLoggedIn(req, res, next) {
+//     if (!req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/');
+// }
