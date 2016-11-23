@@ -21,7 +21,14 @@ var reviveSchema = new Schema({
         type: String
     },
     reviveStory: {
-      type: String
+        type: String
+    },
+    author: {
+      id: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User"
+      },
+      username: String
     }
 });
 

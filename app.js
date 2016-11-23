@@ -9,6 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
+var methodOverride = require('method-override');
 
 
 var routes = require('./routes/index');
@@ -46,9 +47,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
-    // res.locals.session = req.session;
+    res.locals.session = req.session;
     next();
 });
+
+app.use(methodOverride('_method'));
 
 app.use('/users', users);
 app.use('/campaigns', campaigns);
