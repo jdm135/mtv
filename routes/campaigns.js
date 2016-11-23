@@ -6,19 +6,9 @@ var Launch = require('../models/launch');
 var User = require('../models/user');
 
 
-// Revive.create(
-//   {
-//     reviveShowName: "Family Guy",
-//     reviveGoal: 10000.00,
-//     reviveTitle: "The family guy Rules!",
-//     revivePhoto: "http://ib3.huluim.com/show/54?region=US&size=952x536",
-//     reviveVideo: "https://www.youtube.com/embed/uf2-5uDEkS8",
-//     reviveStory: "Air plant edison bulb shabby chic, cred af dreamcatcher quinoa sriracha copper mug sustainable craft beer irony    austin humblebrag la croix. Fingerstache messenger bag lyft gluten-free quinoa four loko, live-edge polaroid etsy health goth. Trust fund pitchfork woke wayfarers blue bottle. Godard affogato scenester next level banjo, whatever migas keffiyeh. Intelligentsia vexillologist photo booth sartorial, helvetica paleo trust fund occupy mumblecore quinoa. Banh mi single-origin coffee salvia godard PBR&B small batch, dreamcatcher shabby chic. Asymmetrical fixie aesthetic snackwave la croix, kitsch health goth gochujang offal bicycle rights put a bird on it ethical."
-//   }
-// );
+// *************** REVIVE **************
 
-
-// REVIVE
+// GET ALL REVIVES
 
 router.get('/revive', isLoggedIn, function(req, res, next) {
   Revive.find({}, function (err, revives) {
@@ -29,6 +19,8 @@ router.get('/revive', isLoggedIn, function(req, res, next) {
     }
   });
 });
+
+// POST A REVIVE (CREATE)
 
 router.post('/revive', isLoggedIn, function(req, res, next) {
   var reviveShowName = req.body.reviveShowName;
@@ -46,14 +38,18 @@ router.post('/revive', isLoggedIn, function(req, res, next) {
     if(err) {
       console.log(err);
     } else {
-      res.redirect('revive');
+      res.redirect('/users/dashboard');
     }
   });
 });
 
+//RENDER REVIVE FORM
+
 router.get('/revive/new', isLoggedIn, function(req, res, next) {
   res.render('campaigns/new_revive');
 });
+
+// REVIVE SHOW PAGE
 
 router.get('/revive/:id', function(req, res, next) {
   Revive.findById(req.params.id, function(err, foundRevive) {
@@ -65,10 +61,24 @@ router.get('/revive/:id', function(req, res, next) {
   });
 });
 
+// DELETE REVIVE
+
+router.delete('/revive/:id', isLoggedIn, function(req, res) {
+  Revive.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      res.redirect('/users/dashboard');
+    } else {
+      res.redirect('/users/dashboard');
+    }
+  });
+});
 
 
 
-//LAUNCH
+
+// ******************** LAUNCH **********************
+
+// GET ALL LAUNCHES
 
 router.get('/launch', isLoggedIn,function(req, res, next) {
   Launch.find({}, function (err, launches) {
@@ -79,6 +89,8 @@ router.get('/launch', isLoggedIn,function(req, res, next) {
     }
   });
 });
+
+// POST A LAUCH (CREATE)
 
 router.post('/launch', isLoggedIn, function(req, res, next) {
   var launchShowName = req.body.launchShowName;
@@ -96,14 +108,18 @@ router.post('/launch', isLoggedIn, function(req, res, next) {
     if(err) {
       console.log(err);
     } else {
-      res.redirect('launch');
+      res.redirect('/users/dashboard');
     }
   });
 });
 
+// RENDER LAUNCH FORM
+
 router.get('/launch/new', isLoggedIn, function(req, res, next) {
   res.render('campaigns/new_launch');
 });
+
+// LAUNCH SHOW PAGE
 
 router.get('/launch/:id', function(req, res, next) {
   Launch.findById(req.params.id, function(err, foundLaunch) {
@@ -115,13 +131,24 @@ router.get('/launch/:id', function(req, res, next) {
   });
 });
 
+// LAUNCH DELETE
 
-
+router.delete('/launch/:id', isLoggedIn, function(req, res) {
+  Launch.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      res.redirect('/users/dashboard');
+    } else {
+      res.redirect('/users/dashboard');
+    }
+  });
+});
 
 
 
 module.exports = router;
 
+
+// MIDDLEWARE
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

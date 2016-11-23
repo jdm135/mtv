@@ -52,7 +52,9 @@
                                     <h3 class="ellipsis"><%= revive.reviveShowName %></h3>
                                     <hr class="small">
                                     <a href="#" class="link">Edit</a>
-                                    <a href="#" class="link">Delete</a>
+                                    <form action="/campaigns/revive/<%= revive._id %>?_method=DELETE" method="post">
+                                      <button>Delete</button>
+                                    </form>
                                 </div>
                             </div>
 
@@ -61,7 +63,7 @@
                           <% launches.forEach(function(launch) { %>
 
                             <div class="slide launch">
-                                <a href="/campaigns/revive/<%= launch._id %>">
+                                <a href="/campaigns/launch/<%= launch._id %>">
                                     <img src="<%= launch.launchPhoto %>">
                                 </a>
                                 <span class="favorite"></span>
@@ -77,7 +79,9 @@
                                     <h3 class="ellipsis"><%= launch.launchShowName %></h3>
                                     <hr class="small">
                                     <a href="#" class="link">Edit</a>
-                                    <a href="#" class="link">Delete</a>
+                                    <form action="/campaigns/launch/<%= launch._id %>?_method=DELETE" method="post">
+                                      <button>Delete</button>
+                                    </form>
                                 </div>
                             </div>
 
